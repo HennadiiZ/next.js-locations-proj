@@ -1,5 +1,5 @@
 import MeetupList from '../components/meetups/MeetupList';
-// import Layout from '../components/layout/Layout';
+import { useEffect, useState } from 'react';
 
 const DUMMY_MEETUPS = [
   {
@@ -25,15 +25,28 @@ const DUMMY_MEETUPS = [
   },
 ];
 
-function HomePage() {
+function HomePage(props) {
+//   const [loadedMeetups, setLoadedMeetups] = useState([]);
+  
+//   useEffect(() => {
+//     setLoadedMeetups(DUMMY_MEETUPS);
+//   }, [setLoadedMeetups]);
+
   return (
-    // <Layout>
-    //   <MeetupList meetups={DUMMY_MEETUPS}/>
-    // </Layout>
-    <MeetupList meetups={DUMMY_MEETUPS}/>
+    // <MeetupList meetups={loadedMeetups}/>
+    <MeetupList meetups={props.meetups}/>
   )
 };
+
+export async function getStaticProps() { // reserved name
+
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS
+    }
+  }
+} ;
+
 export default HomePage;
 
-// The __app.js_ File & Layout Wrapper
-// 
+// How Pre-rendering Works & Which Problem We Face, Data Fetching for Static Pages
