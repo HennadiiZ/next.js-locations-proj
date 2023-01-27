@@ -43,10 +43,11 @@ export async function getStaticProps() { // reserved name
   return {
     props: {
       meetups: DUMMY_MEETUPS
-    }
+    },
+    revalidate: 1
   }
 } ;
 
 export default HomePage;
 
-// How Pre-rendering Works & Which Problem We Face, Data Fetching for Static Pages
+// More on Static Site Generation (SSG)
