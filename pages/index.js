@@ -32,3 +32,5 @@ function HomePage() {
   )
 };
 export default HomePage;
+
+// The __app.js_ File & Layout Wrapper
