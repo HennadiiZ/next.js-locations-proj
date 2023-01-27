@@ -1,5 +1,5 @@
 import MeetupList from '../components/meetups/MeetupList';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 const DUMMY_MEETUPS = [
   {
@@ -27,13 +27,11 @@ const DUMMY_MEETUPS = [
 
 function HomePage(props) {
 //   const [loadedMeetups, setLoadedMeetups] = useState([]);
-  
 //   useEffect(() => {
 //     setLoadedMeetups(DUMMY_MEETUPS);
 //   }, [setLoadedMeetups]);
 
   return (
-    // <MeetupList meetups={loadedMeetups}/>
     <MeetupList meetups={props.meetups}/>
   )
 };
@@ -63,4 +61,4 @@ export async function getStaticProps() { // reserved name
 
 export default HomePage;
 
-// Exploring Server-side Rendering (SSR) with _getServerSideProps_
+// Working with Params for SSG Data Fetching. Preparing Paths with _getStaticPaths_ & Working With Fallback Pages
