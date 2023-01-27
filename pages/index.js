@@ -38,8 +38,21 @@ function HomePage(props) {
   )
 };
 
-export async function getStaticProps() { // reserved name
+// export async function getServerSideProps(context) {
 
+//   const req = context.req;
+//   const res = context.res;
+
+//   // fetch data from API
+
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS
+//     },
+//   };
+// };
+
+export async function getStaticProps() { // reserved name
   return {
     props: {
       meetups: DUMMY_MEETUPS
@@ -50,4 +63,4 @@ export async function getStaticProps() { // reserved name
 
 export default HomePage;
 
-// More on Static Site Generation (SSG)
+// Exploring Server-side Rendering (SSR) with _getServerSideProps_
